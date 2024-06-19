@@ -12,11 +12,13 @@ import {
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
-import { sidebarLinks } from "../../constants/index";
+import { sidebarLinks } from "../constants/index";
 import { usePathname } from "next/navigation";
+import Footer from "./Footer";
 
 const MobileNav = ({ user }: MobileNavProps) => {
   const pathname = usePathname();
+  
   return (
     <section className="w-full max-w-[264px]">
       <Sheet>
@@ -29,10 +31,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
             className="cursor-pointer"
           />
         </SheetTrigger>
-        <SheetContent
-          side="left"
-          className="border-none bg-white"
-        >
+        <SheetContent side="left" className="border-none bg-white">
           <Link
             href="/"
             className="flex cursor-pointer items-center gap-1 px-4"
@@ -74,8 +73,7 @@ const MobileNav = ({ user }: MobileNavProps) => {
                           height={20}
                           width={20}
                           className={cn({
-                            "brightness-[3] invert-0":
-                              isActive,
+                            "brightness-[3] invert-0": isActive,
                           })}
                         />
                         <p
@@ -90,8 +88,11 @@ const MobileNav = ({ user }: MobileNavProps) => {
                     </SheetClose>
                   );
                 })}
+                USER
               </nav>
             </SheetClose>
+
+            <Footer user={user} type="mobile" />
           </div>
         </SheetContent>
       </Sheet>
