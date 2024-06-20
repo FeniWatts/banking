@@ -6,7 +6,7 @@ import React from "react";
 
 const Home = async () => {
   const loggedIn = await getLoggedInUser();
-  
+
   return (
     <section className="home">
       <div className="home-content">
@@ -21,7 +21,7 @@ const Home = async () => {
           <TotalBalanceBox
             accounts={[]}
             totalBanks={1}
-            totalCurrentBalance={1250.35}
+            totalCurrentBalance={1267654.35}
           />
         </header>
         RECENT TRANSACTIONS
@@ -30,10 +30,7 @@ const Home = async () => {
       <RightSIdeBar
         user={loggedIn}
         transactions={[]}
-        banks={[
-          { currentBalance: 123.5 },
-          { currentBalance: 1250.35 },
-        ]}
+        banks={[{ currentBalance: 125.5 }, { currentBalance: 12.35 }]}
       />
     </section>
   );
